@@ -21,7 +21,7 @@
     width: 100%;
     padding: 5vh 10vw;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -33,12 +33,22 @@
       cursor: pointer;
     }
 
+    nav {
+      margin-left: auto;
+    }
+
     .gnb {
       display: flex;
       gap: 30px;
       font: bold 1.2rem/1 "arial";
       color: white;
       cursor: pointer;
+    }
+
+    .btnToggle {
+      font-size: 1.6rem;
+      color: white;
+      display: none;
     }
   }
 
@@ -62,6 +72,7 @@
       border: 1px solid white;
       font-size: 0.8rem/1 "arial";
       color: white;
+      margin-top: 20px;
     }
   }
 
@@ -71,9 +82,11 @@
     bottom: 60px;
     left: 0;
     right: 0;
-    padding: 20px 40px;
+    padding: 20px 0;
+    margin: 0 40px;
     display: flex;
     align-items: center;
+    opacity: .8;
 
     .line {
       display: block;
@@ -93,6 +106,7 @@
         i {
           display: block;
           font-size: 24px;
+          color: #fff;
         }
       }
     }
@@ -100,6 +114,45 @@
     .copy {
       color: white;
       margin-left: auto;
+    }
+  }
+}
+
+// m.p
+@media screen and (max-width: 680px) {
+  #wrap {
+    header {
+      .gnb {
+        display: none;
+      }
+
+      .btnToggle {
+        display: block;
+      }
+    }
+
+    .textBox {
+      h2 {
+        font-size: 15vw;
+      }
+    }
+
+    footer {
+      justify-content: center;
+      flex-wrap: wrap;
+      bottom: 0;
+      .line {
+        width: 100%;
+      }
+      .sns {
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+      .copy {
+        text-align: center;
+        margin-top: 12px;
+        line-height: 1.2;
+      }
     }
   }
 }

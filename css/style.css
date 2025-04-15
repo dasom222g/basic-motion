@@ -1,15 +1,72 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 * {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
+}
+
+button {
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  cursor: pointer;
 }
 
 a {
   text-decoration: none;
-}
-
-ul, ol, li {
-  list-style-type: none;
 }
 
 #wrap {
@@ -31,7 +88,6 @@ ul, ol, li {
   width: 100%;
   padding: 5vh 10vw;
   display: flex;
-  justify-content: space-between;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -42,12 +98,20 @@ ul, ol, li {
   color: white;
   cursor: pointer;
 }
+#wrap header nav {
+  margin-left: auto;
+}
 #wrap header .gnb {
   display: flex;
   gap: 30px;
   font: bold 1.2rem/1 "arial";
   color: white;
   cursor: pointer;
+}
+#wrap header .btnToggle {
+  font-size: 1.6rem;
+  color: white;
+  display: none;
 }
 #wrap .textBox {
   position: absolute;
@@ -68,15 +132,18 @@ ul, ol, li {
   border: 1px solid white;
   font-size: 0.8rem/1 "arial";
   color: white;
+  margin-top: 20px;
 }
 #wrap footer {
   position: absolute;
   bottom: 60px;
   left: 0;
   right: 0;
-  padding: 20px 40px;
+  padding: 20px 0;
+  margin: 0 40px;
   display: flex;
   align-items: center;
+  opacity: 0.8;
 }
 #wrap footer .line {
   display: block;
@@ -95,10 +162,40 @@ ul, ol, li {
 #wrap footer .sns li i {
   display: block;
   font-size: 24px;
+  color: #fff;
 }
 #wrap footer .copy {
   color: white;
   margin-left: auto;
+}
+
+@media screen and (max-width: 680px) {
+  #wrap header .gnb {
+    display: none;
+  }
+  #wrap header .btnToggle {
+    display: block;
+  }
+  #wrap .textBox h2 {
+    font-size: 15vw;
+  }
+  #wrap footer {
+    justify-content: center;
+    flex-wrap: wrap;
+    bottom: 0;
+  }
+  #wrap footer .line {
+    width: 100%;
+  }
+  #wrap footer .sns {
+    justify-content: center;
+    font-size: 1.5rem;
+  }
+  #wrap footer .copy {
+    text-align: center;
+    margin-top: 12px;
+    line-height: 1.2;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
