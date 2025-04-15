@@ -23,16 +23,29 @@ gsap.set(line, { y: -100, opacity: 0 });
 gsap.set(snsList, { y: -100, opacity: 0 });
 gsap.set(copyText, { y: -100, opacity: 0 });
 
+//각 모션을 동기화처리하기 위해 timeline객체 생성후 변수에 할당
+const tl = gsap.timeline();
+
 //로딩 완료시 초기 모션 설정
 gsap.to(bgVideo, { opacity: 0.5, duration: 2 });
-gsap.to(title, { y: 0, opacity: 1, duration: 1, delay: 1 });
-gsap.to(btnOpen, { opacity: 1, duration: 1, delay: 1.5 });
-gsap.to(logo, { y: 0, opacity: 1, duration: 1, delay: 2 });
-gsap.to(menus, { y: 0, opacity: 1, duration: 1, delay: 2, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
+// gsap.to(title, { y: 0, opacity: 1, duration: 1, delay: 1 });
+// gsap.to(btnOpen, { opacity: 1, duration: 1, delay: 1.5 });
+// gsap.to(logo, { y: 0, opacity: 1, duration: 1, delay: 2 });
+// gsap.to(menus, { y: 0, opacity: 1, duration: 1, delay: 2.5, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
+// // footer
+// gsap.to(line, { y: 0, opacity: 1, duration: 1, delay: 3 });
+// gsap.to(snsList, { y: 0, opacity: 1, duration: 1, delay: 3, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
+// gsap.to(copyText, { y: 0, opacity: 1, duration: 1, delay: 3.5 });
+
+// timline방식으로 변경
+tl.to(title, { y: 0, opacity: 1, duration: 1 });
+tl.to(btnOpen, { opacity: 1, duration: 1 });
+tl.to(logo, { y: 0, opacity: 1, duration: 0.5 });
+tl.to(menus, { y: 0, opacity: 1, duration: 1, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
 // footer
-gsap.to(line, { y: 0, opacity: 1, duration: 1, delay: 2 });
-gsap.to(snsList, { y: 0, opacity: 1, duration: 1, delay: 2.5, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
-gsap.to(copyText, { y: 0, opacity: 1, duration: 1, delay: 3 });
+tl.to(line, { y: 0, opacity: 1, duration: 1 });
+tl.to(snsList, { y: 0, opacity: 1, duration: 1, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
+tl.to(copyText, { y: 0, opacity: 1, duration: 1 });
 
 // 버튼에 호버모션 연결
 
