@@ -1,0 +1,105 @@
+@use "reset";
+
+#wrap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: black;
+  overflow: hidden;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+
+  // gnb스타일
+  header {
+    width: 100%;
+    padding: 5vh 10vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+
+    h1 {
+      font: bold 1.8rem/1 "arial";
+      color: white;
+      cursor: pointer;
+    }
+
+    .gnb {
+      display: flex;
+      gap: 30px;
+      font: bold 1.2rem/1 "arial";
+      color: white;
+      cursor: pointer;
+    }
+  }
+
+  .textBox {
+    //풀스크린 레이아웃에서 absolute요소를 화면 정중앙에 배치
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+
+    h2 {
+      font-size: 10vw;
+      font-weight: normal;
+      color: white;
+      font-family: "LimeLight";
+    }
+    .btnOpen {
+      display: inline-block;
+      padding: 7px 30px;
+      border: 1px solid white;
+      font-size: 0.8rem/1 "arial";
+      color: white;
+    }
+  }
+
+  // footer
+  footer {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+
+    .line {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      margin-bottom: 20px;
+    }
+
+    .sns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      li {
+        i {
+          display: block;
+          font-size: 24px;
+        }
+      }
+    }
+
+    .copy {
+      color: white;
+      margin-left: auto;
+    }
+  }
+}

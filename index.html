@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- sass --watch styles/style.scss:css/style.css 명령어로 컴파일된 파일 임시저장 -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- 폰트 라이브러리 연결 -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&display=swap"
+      rel="stylesheet"
+    />
+    <!-- motion라이브러리 연결 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <!-- font awsome 연결 -->
+    <script
+      src="https://kit.fontawesome.com/bec168c300.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <video src="vid/bg2.mp4" autoplay muted loop></video>
+
+      <header>
+        <h1>Takamatsu</h1>
+        <ul class="gnb">
+          <li>about</li>
+          <li>company</li>
+          <li>gallery</li>
+          <li>contact</li>
+        </ul>
+      </header>
+
+      <article class="textBox">
+        <h2>JAPAN</h2>
+        <a href="#" class="btnOpen">VIEW DETAIL</a>
+      </article>
+
+      <footer>
+        <i class="line"></i>
+        <ul class="sns">
+          <li>
+            <button><i class="fa-brands fa-twitter"></i></button>
+          </li>
+          <li>
+            <button><i class="fa-brands fa-facebook"></i></button>
+          </li>
+          <li>
+            <button><i class="fa-brands fa-youtube"></i></button>
+          </li>
+        </ul>
+        <p class="copy">2025 TAKAMATSU &copy; ALL RIGHTS RESERVED.</p>
+      </footer>
+    </div>
+  </body>
+</html>
