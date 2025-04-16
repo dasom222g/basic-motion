@@ -1,9 +1,17 @@
+import { splitText } from "./splitText.js";
+
 // index페이지 용
 const bgVideo = document.querySelector("video");
 const title = document.querySelector(".textBox h2");
 const btnOpen = document.querySelector(".btnOpen");
 const logo = document.querySelector("h1");
 const menus = document.querySelectorAll(".gnb li");
+
+const slogan = document.querySelector(".textBox h2");
+
+splitText(slogan); // 문자열을 한글자씩 span에 할당
+
+const sloganStrList = slogan.querySelectorAll("span");
 
 // footer
 const line = document.querySelector(".line");
@@ -14,10 +22,12 @@ console.log("copyText", copyText);
 
 //scss에서 초기 위치값을 수정하는 것이 아닌 set으로 초기위치값 변경
 gsap.set(bgVideo, { opacity: 0 });
-gsap.set(title, { y: -100, opacity: 0 });
+// gsap.set(title, { y: -100, opacity: 0 });
+gsap.set(sloganStrList, { scale: 3, opacity: 0 });
 gsap.set(btnOpen, { opacity: 0 });
 gsap.set(logo, { y: -100, opacity: 0 });
 gsap.set(menus, { y: -100, opacity: 0 });
+
 // footer
 gsap.set(line, { y: -100, opacity: 0 });
 gsap.set(snsList, { y: -100, opacity: 0 });
@@ -38,7 +48,8 @@ gsap.to(bgVideo, { opacity: 0.5, duration: 2 });
 // gsap.to(copyText, { y: 0, opacity: 1, duration: 1, delay: 3.5 });
 
 // timline방식으로 변경
-tl.to(title, { y: 0, opacity: 1, duration: 1 });
+tl.to(title, { y: 0, opacity: 1, duration: 1 }); // 전체 타이틀
+tl.to(sloganStrList, { scale: 1, opacity: 1, duration: 1, stagger: 0.2 }); // 타이틀 내 한글자씩
 tl.to(btnOpen, { opacity: 1, duration: 1 });
 tl.to(logo, { y: 0, opacity: 1, duration: 0.5 });
 tl.to(menus, { y: 0, opacity: 1, duration: 1, stagger: 0.2 }); // stagger: 각 요소별 딜레이 차등처리
@@ -67,3 +78,5 @@ btnOpen.addEventListener("mouseleave", () => {
   gsap.to(btnOpen, { scale: 1, opacity: 1, duration: 0.5 });
   onButtonMotion.kill();
 });
+
+// ------------------------------------------
